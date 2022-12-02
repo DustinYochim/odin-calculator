@@ -1,5 +1,5 @@
 body {
-    background-color: #c9c8c8;
+    background-color: #bdbdbd;
 }
 .flex-container {
     display: flex;
@@ -22,7 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: rgb(90,86,82);
+    background-color: rgb(90, 86, 82);
 
 }
 
@@ -32,7 +32,7 @@ body {
     height: 120px;
     font-size: 8vw;
     text-align: end;
-    background-color: rgb(90,86,82);
+    background-color: rgba(90, 86, 82, 0.452);
     color: white;
     display: flex;
     align-items:center;
@@ -61,13 +61,13 @@ button {
     font-size: 3vw;
     padding: 0;
     color: white;
-    background-color: rgb(131,128,125);
+    background-color: rgba(131, 128, 125, 0.438);
 
 }
 
 button.operator,
 button.equals  {
-    background-color: rgb(242,163,60)
+    background-color: rgb(242, 163, 60)
 }
 
 .clear,
@@ -78,4 +78,12 @@ button.equals  {
 
 .footer {
     font-size: 24px;
+    text-align: center;
+    /* border: 1px solid red; */
+    vertical-align: center;
+}
+
+img {
+    height: 30px;
+    width: 30px;
 }
