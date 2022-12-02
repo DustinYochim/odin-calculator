@@ -1,3 +1,81 @@
-.display {
-    background: #EEEEEE;
+body {
+    background-color: #c9c8c8;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+
+}
+.content {
+    display: flex;
+    width: 475px;
+    /* border: 1px solid blue; */
+    margin-top: 10vh;
+}
+
+.calculator {
+    border: 10px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: rgb(90,86,82);
+
+}
+
+
+.screen {
+    /* border: 1px solid green; */
+    height: 120px;
+    font-size: 8vw;
+    text-align: end;
+    background-color: rgb(90,86,82);
+    color: white;
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+    margin: 0px 40px 0px 40px;
+}
+
+.buttons {
+    /* border: 1px solid yellow; */
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-one,
+.row-two,
+.row-three,
+.row-four,
+.row-five {
+    display: flex;
+    flex: 1;
+}
+
+button {
+    flex: 1;
+    font-size: 3vw;
+    padding: 0;
+    color: white;
+    background-color: rgb(131,128,125);
+
+}
+
+button.operator,
+button.equals  {
+    background-color: rgb(242,163,60)
+}
+
+.clear,
+.negate,
+.percent {
+    background-color: rgb(106,103,99);
+}
+
+.footer {
+    font-size: 24px;
 }

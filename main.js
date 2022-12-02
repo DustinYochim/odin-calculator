@@ -1,3 +1,12 @@
+let screen = document.querySelector('.screen');
+let displayValue = '';
+
+let supportedOperators = ['+', '-', '*', '/'];
+
+let numOne = '';
+let op = null;
+let result = '';
+
 function add(x,y) {
     return x + y;
 }
@@ -29,3 +38,24 @@ function operate(operator, x, y) {
     }
 }
 
+function buttonClick(x) {
+
+}
+
+function clear() {
+    // clear screen
+    screen.textContent = '';
+    // clear variables
+    displayValue = '';
+    numOne = '';
+    op = '';
+    numTwo = '';
+    result = '';
+
+}
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        buttonClick(button.className);
+    });
+});
