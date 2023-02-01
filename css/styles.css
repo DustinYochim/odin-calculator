@@ -1,0 +1,114 @@
+html * {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5)
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 70px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #957dad,
+                    1px 2px 0px blue,
+                    1px 3px 0px blue,
+                    1px 4px 0px orange,
+                    1px 5px 0px orange,
+                    1px 6px 0px orange,
+                    1px 10px 5px rgba(16, 16, 16, 0.5),
+                    1px 15px 10px rgba(16, 16, 16, 0.4),
+                    1px 20px 30px rgba(16, 16, 16, 0.3),
+                    1px 25px 50px rgba(16, 16, 16, 0.2);
+
+}
+
+.calculator {
+    height: 700px;
+    width: 525px;
+    margin-top: 50px;
+    border: 4px solid black;
+    border-radius: 10px;
+    background-color: #aaa;
+}
+
+.screen {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 20px;
+    background-color: #e6e6e6;
+    margin: 20px;
+    height: 150px;
+    border: 4px solid black;
+    border-radius: 10px;
+    font-size: 80px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+}
+.row {
+    display: flex;
+}
+
+.row button {
+    flex: 1;
+}
+
+button {
+    height: 85px;
+    width: 100px;
+    font-size: 2rem;
+    margin: 5px;
+    border: 4px solid black;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+}
+
+button.clear {
+    background-color: #957dad;
+}
+
+button.delete {
+    background-color: #23a6d5;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 24px;
+    font-weight: bolder;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+footer img {
+    width: 30px;
+    height: auto;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
