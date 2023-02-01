@@ -78,12 +78,12 @@ button {
     background-color: #e6e6e6;
 }
 
-button.clear {
-    background-color: #957dad;
+button#clear {
+    background-color: lightgreen;
 }
 
-button.delete {
-    background-color: #23a6d5;
+button#delete {
+    background-color: rgb(255, 68, 0);
 }
 
 button:hover {

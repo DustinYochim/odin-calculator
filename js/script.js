@@ -1,3 +1,11 @@
+let displayValue = '';
+let firstNum = '';
+let currentOperator = '';
+let secondNum = '';
+
+const display = document.querySelector('.screen');
+const buttons = document.querySelectorAll('button');
+
 function add(x, y) {
     return x + y;
 }
@@ -21,16 +29,16 @@ function divide(x,y) {
 function operate(operator, x, y) {
     switch(operator) {
         case '+':
-            add(x,y);
+            return add(x,y);
             break;
         case '-':
-            subtract(x,y);
+            return subtract(x,y);
             break;
         case '*':
-            multiply(x,y);
+            return multiply(x,y);
             break;
         case '/':
-            divide(x,y);
+            return divide(x,y);
             break;
     }
 }
