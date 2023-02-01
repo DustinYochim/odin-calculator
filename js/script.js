@@ -34,7 +34,7 @@ function operate(operator, x, y) {
         case '-':
             return subtract(x,y);
             break;
-        case '*':
+        case 'x':
             return multiply(x,y);
             break;
         case '/':
@@ -42,3 +42,35 @@ function operate(operator, x, y) {
             break;
     }
 }
+
+function populateDisplay() {
+    if (displayValue === '') {
+        display.textContent = '0';
+    } else {
+        display.textContent = displayValue;
+    }
+}
+
+function buttonClick(id) {
+    if (displayValue.length <= 6 && !isNaN(+id)) { // Number Clicked
+        displayValue += id;
+        populateDisplay();
+    } else if (id === 'clear') { // Clear Clicked
+        displayValue = '';
+        firstNum = '';
+        secondNum = '';
+        currentOperator = '';
+        populateDisplay();
+    } else if (id === 'delete') { // Delete Clicked
+        displayValue = (displayValue.slice(0, displayValue.length - 1 ));
+        populateDisplay();
+    } else if (id === '+' || id === '-' || id === 'x' || id === '/') {
+
+    }
+}
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        buttonClick(button.id);
+    });
+});
