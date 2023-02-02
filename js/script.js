@@ -1,7 +1,8 @@
 let displayValue = '';
-let firstNum = '';
-let currentOperator = '';
-let secondNum = '';
+let savedNum = '';
+let operator = '';
+
+let supportedOperators = ['+', '-', 'x', '/'];
 
 const display = document.querySelector('.screen');
 const buttons = document.querySelectorAll('button');
@@ -29,48 +30,84 @@ function divide(x,y) {
 function operate(operator, x, y) {
     switch(operator) {
         case '+':
-            return add(x,y);
+            return Math.round((add(x,y) + Number.EPSILON) * 100) / 100;
             break;
         case '-':
-            return subtract(x,y);
+            return Math.round((subtract(x,y) + Number.EPSILON) * 100) / 100;
             break;
         case 'x':
-            return multiply(x,y);
+            return Math.round((multiply(x,y) + Number.EPSILON) * 100) / 100;
             break;
         case '/':
-            return divide(x,y);
+            return Math.round((divide(x,y) + Number.EPSILON) * 100) / 100;
             break;
     }
 }
 
 function populateDisplay() {
-    if (displayValue === '') {
-        display.textContent = '0';
-    } else {
-        display.textContent = displayValue;
+    display.textContent = displayValue;
+}
+
+function clearClicked() {
+    displayValue = '';
+    savedNum = '';
+    operator = '';
+    populateDisplay();
+}
+
+function deleteClicked() {
+    if (displayValue.length >= 1) {
+        displayValue = displayValue.slice(0, displayValue.length - 1);
+        populateDisplay();
     }
 }
 
-function buttonClick(id) {
-    if (displayValue.length <= 6 && !isNaN(+id)) { // Number Clicked
-        displayValue += id;
-        populateDisplay();
-    } else if (id === 'clear') { // Clear Clicked
-        displayValue = '';
-        firstNum = '';
-        secondNum = '';
-        currentOperator = '';
-        populateDisplay();
-    } else if (id === 'delete') { // Delete Clicked
-        displayValue = (displayValue.slice(0, displayValue.length - 1 ));
-        populateDisplay();
-    } else if (id === '+' || id === '-' || id === 'x' || id === '/') {
+function numberClicked(id) {
+    if (id === '.' && displayValue.includes('.')) return;
+    displayValue += id;
+    populateDisplay();
+}
 
+function operatorClicked(id) {
+    if (operator !== '') {
+        displayValue = operate(operator, +savedNum, +displayValue);
+        populateDisplay();
+        savedNum = displayValue;
+        displayValue = '';
+        operator = id;
+    } else {
+        savedNum = displayValue;
+        displayValue = '';
+        operator = id;
+    }
+}
+
+function equalsClicked() {
+    if (displayValue !== '' && savedNum !== '' && operator !== '') {
+        displayValue = operate(operator, +savedNum, +displayValue);
+        populateDisplay();
+        savedNum = displayValue;
+        displayValue = '';
+        operator = '';
+    }
+}
+
+function handleButtonClick(id) {
+    if (id === 'clear') {
+        clearClicked();
+    } else if (id === 'delete') {
+        deleteClicked();
+    } else if (supportedOperators.includes(id)) {
+        operatorClicked(id);
+    } else if (id === '=') {
+        equalsClicked();
+    } else if (!isNaN(id) || id === '.') {
+        numberClicked(id);
     }
 }
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        buttonClick(button.id);
+        handleButtonClick(button.id);
     });
 });
