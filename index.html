@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Odin Calculator</title>
     <header><h1 class="title">Odin Calculator</h1></header>
     <main>
-        <div class="calculator">
-            <div class="screen"></div>
-            <div class="buttons">
-                <div class="row">
-                    <button id="clear">CLEAR</button>
-                    <button id="delete">DELETE</button>
-                </div>
-                <div class="row">
-                    <button id="7">7</button>
-                    <button id="8">8</button>
-                    <button id="9">9</button>
-                    <button id="/">/</button>
-                </div>
-                <div class="row">
-                    <button id="4">4</button>
-                    <button id="5">5</button>
-                    <button id="6">6</button>
-                    <button id="x">x</button>
-                </div>
-                <div class="row">
-                    <button id="1">1</button>
-                    <button id="2">2</button>
-                    <button id="3">3</button>
-                    <button id="-">-</button>
-                </div>
-                <div class="row">
-                    <button id=".">.</button>
-                    <button id="0">0</button>
-                    <button id="=">=</button>
-                    <button id="+">+</button>
-                </div>
-            </div>
+      <div class="calculator">
+        <div class="screen"></div>
+        <div class="buttons">
+          <div class="row">
+            <button id="clear">CLEAR</button>
+            <button data-key="Backspace" id="delete">DELETE</button>
+          </div>
+          <div class="row">
+            <button data-key="7" id="7">7</button>
+            <button data-key="8" id="8">8</button>
+            <button data-key="9" id="9">9</button>
+            <button data-key="/" id="/">/</button>
+          </div>
+          <div class="row">
+            <button data-key="4" id="4">4</button>
+            <button data-key="5" id="5">5</button>
+            <button data-key="6" id="6">6</button>
+            <button data-key="*" id="x">x</button>
+          </div>
+          <div class="row">
+            <button data-key="1" id="1">1</button>
+            <button data-key="2" id="2">2</button>
+            <button data-key="3" id="3">3</button>
+            <button data-key="-" id="-">-</button>
+          </div>
+          <div class="row">
+            <button data-key="." id=".">.</button>
+            <button data-key="0" id="0">0</button>
+            <button data-key="=" id="=">=</button>
+            <button data-key="+" id="+">+</button>
+          </div>
         </div>
+      </div>
     </main>
     <footer>
-        <div class="copyright">
-        Copyright © 2023 <a href="https://github.com/DustinYochim/odin-calculator">DustinYochim</a>
-        </div>
+      <div class="copyright">
+        Copyright © 2023
+        <a href="https://github.com/DustinYochim/odin-calculator"
+          >DustinYochim</a
+        >
+      </div>
     </footer>
-</head>
-<script src="./js/script.js"></script>
-<body>
-    
-</body>
+  </head>
+  <script src="./js/script.js"></script>
+  <body></body>
 </html>
